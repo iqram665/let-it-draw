@@ -1,0 +1,35 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #000; /* অন্ধকার ব্যাকগ্রাউন্ড */
+}
+
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.base-image, .final-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.base-image {
+    background-image: url('https://picsum.photos/id/10/1920/1080'); /* ব্যাকগ্রাউন্ড ইমেজ */
+    filter: grayscale(100%); /* ঝাপসা বা ধূসর করতে চাইলে */
+}
+
+.final-image {
+    background-image: url('https://picsum.photos/id/10/1920/1080'); /* কালার ইমেজ */
+    clip-path: circle(100px at var(--x, 50%) var(--y, 50%));
+    will-change: clip-path;
+}
